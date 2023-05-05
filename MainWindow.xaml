@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Авторизация" FontSize="34" BorderThickness="0,30,0,60" Margin="0,15,0,0" />
+            <StackPanel Margin="0,0,0,5" >
+                <Label Content="Логин" FontSize="14"/>
+                <TextBox Height="20" FontSize="12"/>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Пароль" FontSize="14"/>
+                <PasswordBox Height="20" FontSize="12"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                <Button Height="30" Width="25" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,5,0">
+                    <Path Fill="Black" Data="M20,21V3H13a1,1,0,0,1,0-2h8a1,1,0,0,1,1,1V22a1,1,0,0,1-1,1H13a1,1,0,0,1,0-2ZM2,12a1,1,0,0,0,1,1H14.586l-2.293,2.293a1,1,0,1,0,1.414,1.414l4-4a1,1,0,0,0,0-1.414l-4-4a1,1,0,1,0-1.414,1.414L14.586,11H3A1,1,0,0,0,2,12Z"/>
+                    
+                </Button>
+                <Label>
+                    <Hyperlink x:Name="regHyperlink" Click="regHyperlink_Click">
+                        Регистрация
+                    </Hyperlink>
+                </Label>
+
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

@@ -24,5 +24,10 @@ namespace uchetProject
         {
             InitializeComponent();
         }
+
+        private void regHyperlink_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
