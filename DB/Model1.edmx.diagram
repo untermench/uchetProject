@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="acb8ca8562b8477884356450640c03a1" Name="Diagram1">
+        <EntityTypeShape EntityType="uchotDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Группы" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Заявки" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Преподаватель" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Сотрудник" Width="1.5" PointX="11" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Специальность" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Статус_заявки" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Статус_студента" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Студент" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Тип_сотрудника" Width="1.5" PointX="8.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Форма_обучения" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="uchotDBModel.FK_Группы_Преподаватель" ManuallyRouted="false" />
+        <AssociationConnector Association="uchotDBModel.FK_Группы_Специальность" ManuallyRouted="false" />
+        <AssociationConnector Association="uchotDBModel.FK_Студент_Группы" ManuallyRouted="false" />
+        <AssociationConnector Association="uchotDBModel.FK_Заявки_Специальность" ManuallyRouted="false" />
+        <AssociationConnector Association="uchotDBModel.FK_Заявки_Статус_заявки" ManuallyRouted="false" />
+        <AssociationConnector Association="uchotDBModel.FK_Сотрудник_Тип_сотрудника" ManuallyRouted="false" />
+        <AssociationConnector Association="uchotDBModel.FK_Студент_Статус_студента" ManuallyRouted="false" />
+        <AssociationConnector Association="uchotDBModel.FK_Студент_Форма_обучения" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

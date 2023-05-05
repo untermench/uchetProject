@@ -29,5 +29,25 @@ namespace uchetProject
         {
 
         }
+
+        private void _signInButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var user = DB.Connect.con.Сотрудник.FirstOrDefault(i => i.Логин == _logBox.Text.Trim() && i.Пароль == _pasPobx.Password.Trim() || i.Почта == _logBox.Text.Trim() && i.Пароль == _pasPobx.Password.Trim());
+                if (user != null)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Неверные данные");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message);
+            }
+        }
     }
 }
