@@ -30,7 +30,8 @@ namespace uchetProject
 
         private void regHyperlink_Click(object sender, RoutedEventArgs e)
         {
-
+            Windows.passwordWin win = new Windows.passwordWin();
+            win.ShowDialog();
         }
 
         int count = 0;

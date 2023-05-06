@@ -24,7 +24,7 @@
                 </Button>
                 <Label Name="regLink">
                     <Hyperlink x:Name="regHyperlink" Click="regHyperlink_Click">
-                        Регистрация
+                        Не помню пароль
                     </Hyperlink>
                 </Label>
 

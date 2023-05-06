@@ -27,7 +27,7 @@ namespace uchetProject.Windows
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
-            //
+            
         }
     }
 }
