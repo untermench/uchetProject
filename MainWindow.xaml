@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:uchetProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Вход" Height="450" Width="800">
     <Grid>
         <StackPanel HorizontalAlignment="Center">
             <Label Content="Авторизация" FontSize="34" BorderThickness="0,30,0,60" Margin="0,15,0,0" />

@@ -47,26 +47,19 @@ namespace uchetProject.Windows
                     }
                     pas = res.ToString();
 
-                    // отправитель - устанавливаем адрес и отображаемое в письме имя
                     MailAddress from = new MailAddress("k_aguero@list.ru", "Учет обучающихся колледжа");
-                    // кому отправляем
                     MailAddress to = new MailAddress(mailBox.Text);
-                    // создаем объект сообщения
                     MailMessage m = new MailMessage(from, to);
-                    // тема письма
                     m.Subject = "Восстановление пароля";
-                    // текст письма
                     m.Body = $"<h2>Код восстановления: {pas}</h2>";
-                    // письмо представляет код html
                     m.IsBodyHtml = true;
-                    // адрес smtp-сервера и порт, с которого будем отправлять письмо
                     SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
-                    // логин и пароль
                     smtp.Credentials = new NetworkCredential("k_aguero@list.ru", "DFH10VkWEttxTW5QdP5e");
                     smtp.EnableSsl = true;
                     smtp.Send(m);
                     Console.Read();
                     MessageBox.Show("Готово");
+
                     mailBox.Visibility = Visibility.Hidden;
                     goButton.Visibility = Visibility.Hidden;
                     mailLable.Visibility = Visibility.Hidden;
