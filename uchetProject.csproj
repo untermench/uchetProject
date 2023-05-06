@@ -185,7 +185,6 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Resource Include="icon.ico" />
-    <Resource Include="judaism_religious_symbol_icon_250313.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
