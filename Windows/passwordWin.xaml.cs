@@ -27,32 +27,99 @@ namespace uchetProject.Windows
             InitializeComponent();
         }
 
+        string pas = "";
+        int mailcash;
         private void goButton_Click(object sender, RoutedEventArgs e)
         {
-            var mail = DB.Connect.con.Сотрудник.FirstOrDefault(i => i.Почта == mailBox.Text);
-            if (mail != null)
+            try
             {
-                // отправитель - устанавливаем адрес и отображаемое в письме имя
-                MailAddress from = new MailAddress("k_aguero@list.ru", "Проверка");
-                // кому отправляем
-                MailAddress to = new MailAddress(mailBox.Text);
-                // создаем объект сообщения
-                MailMessage m = new MailMessage(from, to);
-                // тема письма
-                m.Subject = "Тест";
-                // текст письма
-                m.Body = "<h2>Письмо-тест работы smtp-клиента</h2>";
-                // письмо представляет код html
-                m.IsBodyHtml = true;
-                // адрес smtp-сервера и порт, с которого будем отправлять письмо
-                SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
-                // логин и пароль
-                smtp.Credentials = new NetworkCredential("k_aguero@list.ru", "DFH10VkWEttxTW5QdP5e");
-                smtp.EnableSsl = true;
-                smtp.Send(m);
-                Console.Read();
-            MessageBox.Show("Готово");
+                var mail = DB.Connect.con.Сотрудник.FirstOrDefault(i => i.Почта == mailBox.Text);
+                if (mail != null)
+                {
+                    mailcash = mail.ID;
+                    int length = 6;
+                    const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+                    StringBuilder res = new StringBuilder();
+                    Random rnd = new Random();
+                    while (0 < length--)
+                    {
+                        res.Append(valid[rnd.Next(valid.Length)]);
+                    }
+                    pas = res.ToString();
+
+                    // отправитель - устанавливаем адрес и отображаемое в письме имя
+                    MailAddress from = new MailAddress("k_aguero@list.ru", "Учет обучающихся колледжа");
+                    // кому отправляем
+                    MailAddress to = new MailAddress(mailBox.Text);
+                    // создаем объект сообщения
+                    MailMessage m = new MailMessage(from, to);
+                    // тема письма
+                    m.Subject = "Восстановление пароля";
+                    // текст письма
+                    m.Body = $"<h2>Код восстановления: {pas}</h2>";
+                    // письмо представляет код html
+                    m.IsBodyHtml = true;
+                    // адрес smtp-сервера и порт, с которого будем отправлять письмо
+                    SmtpClient smtp = new SmtpClient("smtp.mail.ru", 2525);
+                    // логин и пароль
+                    smtp.Credentials = new NetworkCredential("k_aguero@list.ru", "DFH10VkWEttxTW5QdP5e");
+                    smtp.EnableSsl = true;
+                    smtp.Send(m);
+                    Console.Read();
+                    MessageBox.Show("Готово");
+                    mailBox.Visibility = Visibility.Hidden;
+                    goButton.Visibility = Visibility.Hidden;
+                    mailLable.Visibility = Visibility.Hidden;
+
+                    vvodBox.Visibility = Visibility.Visible;
+                    vvodButton.Visibility = Visibility.Visible;
+                    vvodLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    MessageBox.Show("Неверные данные");
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+        }
+
+        private void vvodButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(vvodBox.Text == pas)
+            {
+                vvodBox.Visibility = Visibility.Hidden;
+                vvodButton.Visibility = Visibility.Hidden;
+                vvodLabel.Visibility = Visibility.Hidden;
+
+                pasBox.Visibility = Visibility.Visible;
+                pasLabel.Visibility = Visibility.Visible;
+                resetButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MessageBox.Show("Неверный код");
+                Close();
+            }
+        }
+
+        private void resetButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var user = DB.Connect.con.Сотрудник.FirstOrDefault(i => i.ID == mailcash);
+                user.Пароль = pasBox.Text;
+                DB.Connect.con.SaveChanges();
+                MessageBox.Show("Пароль изменен");
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message);
+            }
+
         }
     }
 }
