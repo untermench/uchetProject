@@ -26,6 +26,7 @@ namespace uchetProject
         {
             InitializeComponent();
             timer.Tick += new EventHandler(_Tick);
+            //
         }
 
         private void regHyperlink_Click(object sender, RoutedEventArgs e)
