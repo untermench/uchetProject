@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="acb8ca8562b8477884356450640c03a1" Name="Diagram1">
+      <Diagram DiagramId="43db144ed2ea4c0b93b0006961569a83" Name="Diagram1">
         <EntityTypeShape EntityType="uchotDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="uchotDBModel.Группы" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="uchotDBModel.Заявки" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />

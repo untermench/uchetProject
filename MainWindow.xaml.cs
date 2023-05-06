@@ -43,9 +43,16 @@ namespace uchetProject
                 var user = DB.Connect.con.Сотрудник.FirstOrDefault(i => i.Логин == _logBox.Text.Trim() && i.Пароль == _pasPobx.Password.Trim() || i.Почта == _logBox.Text.Trim() && i.Пароль == _pasPobx.Password.Trim());
                 if (user != null)
                 {
-                    Windows.FrameWin win = new Windows.FrameWin();
-                    win.Show();
-                    Close();
+                    if (user.ID_Тип == 1)
+                    {
+                        Windows.FrameWin win = new Windows.FrameWin();
+                        win.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        Close();
+                    }
                 }
                 else
                 {

@@ -22,6 +22,12 @@ namespace uchetProject.Windows
         public FrameWin()
         {
             InitializeComponent();
+            listDB.ItemsSource = DB.Connect.con.Сотрудник.ToList();
+        }
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

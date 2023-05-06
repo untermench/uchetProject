@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:uchetProject.Windows"
         mc:Ignorable="d"
-        Title="FrameWin" Height="450" Width="800">
+        Title="FrameWin" Height="512" Width="1024">
     <Grid>
-        
+        <ListView x:Name="listDB" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ФИО" DisplayMemberBinding="{Binding ФИО}"/>
+                    <GridViewColumn Header="Почта" DisplayMemberBinding="{Binding Почта}"/>
+                    <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Телефон}"/>
+                    <GridViewColumn Header="Логин" DisplayMemberBinding="{Binding Логин}"/>
+                    <GridViewColumn Header="Пароль" DisplayMemberBinding="{Binding Пароль}"/>
+                    <GridViewColumn Header="Тип" DisplayMemberBinding="{Binding Тип_сотрудника.Название}"/>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="editButton" Click="editButton_Click" Height="20" Width="90" Content="Редактировать"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
