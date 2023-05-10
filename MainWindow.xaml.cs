@@ -53,6 +53,8 @@ namespace uchetProject
                     }
                     else
                     {
+                        Windows.StudentWin win = new Windows.StudentWin();
+                        win.Show();
                         Close();
                     }
                 }
