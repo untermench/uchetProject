@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище uchotDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище uchotDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -73,6 +73,8 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Название" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Код" Type="nvarchar" MaxLength="50" />
+          <Property Name="Сокращение" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Статус_заявки">
           <Key>
@@ -258,7 +260,8 @@
             <End Role="Студент" EntitySet="Студент" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="uchotDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -337,6 +340,8 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Код" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Сокращение" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Группы" Relationship="Self.FK_Группы_Специальность" FromRole="Специальность" ToRole="Группы" />
           <NavigationProperty Name="Заявки" Relationship="Self.FK_Заявки_Специальность" FromRole="Специальность" ToRole="Заявки" />
         </EntityType>
@@ -609,6 +614,8 @@
               <MappingFragment StoreEntitySet="Специальность">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Код" ColumnName="Код" />
+                <ScalarProperty Name="Сокращение" ColumnName="Сокращение" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

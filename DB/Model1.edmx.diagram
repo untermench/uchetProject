@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="43db144ed2ea4c0b93b0006961569a83" Name="Diagram1">
-        <EntityTypeShape EntityType="uchotDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Группы" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Заявки" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Преподаватель" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Сотрудник" Width="1.5" PointX="11" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Специальность" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Статус_заявки" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Статус_студента" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Студент" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Тип_сотрудника" Width="1.5" PointX="8.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="uchotDBModel.Форма_обучения" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+      <Diagram DiagramId="668fb397d0714b919efa73f91052b386" Name="Diagram1">
+        <EntityTypeShape EntityType="uchotDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Группы" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Заявки" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Преподаватель" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Сотрудник" Width="1.5" PointX="11" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Специальность" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Статус_заявки" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Статус_студента" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Студент" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Тип_сотрудника" Width="1.5" PointX="8.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="uchotDBModel.Форма_обучения" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
         <AssociationConnector Association="uchotDBModel.FK_Группы_Преподаватель" ManuallyRouted="false" />
         <AssociationConnector Association="uchotDBModel.FK_Группы_Специальность" ManuallyRouted="false" />
         <AssociationConnector Association="uchotDBModel.FK_Студент_Группы" ManuallyRouted="false" />

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using uchetProject.DB;
 
 namespace uchetProject.Windows
 {
@@ -27,22 +28,45 @@ namespace uchetProject.Windows
 
         private void listDB_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            DB.uchotDBEntities NDB = new DB.uchotDBEntities();
+            int removeID = (listDB.SelectedItem as Студент).ID;
+            var removeStud = NDB.Студент.FirstOrDefault(i => i.ID == removeID);
+            if (removeStud != null)
+            {
+                conClass.studID = removeStud.ID;
+                EditStudWin win = new EditStudWin();
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Студент не найден");
+            }
         }
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                DB.uchotDBEntities co = new DB.uchotDBEntities();
-                var remove = co.Студент.FirstOrDefault(i => i.ID == (listDB.SelectedItem as DB.Студент).ID);
-                co.Студент.Remove(remove);
-                co.SaveChanges();
+                if (MessageBox.Show($"Вы действительно хотите удалить запись?",
+                        "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    DB.uchotDBEntities NDB = new DB.uchotDBEntities();
+                    int removeID = (listDB.SelectedItem as Студент).ID;
+                    var removeStud = NDB.Студент.FirstOrDefault(i => i.ID == removeID);
+                    NDB.Студент.Remove(removeStud);
+                    NDB.SaveChanges();
+                    MessageBox.Show("Данные удалены");
 
+                    listDB.ItemsSource = DB.Connect.con.Студент.ToList();
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка");
+                }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("Ошибка" + ex.Message);
+                MessageBox.Show("Ошибка", ex.Message);
             }
         }
     }
