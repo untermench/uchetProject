@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using uchetProject.DB;
 
 namespace uchetProject.Windows
 {
@@ -29,6 +31,8 @@ namespace uchetProject.Windows
             string path = Environment.CurrentDirectory + "//" + stud.Изображение;
             MessageBox.Show(path);
             studImage.Source = new BitmapImage(new Uri(path));
+
+            CB_group.ItemsSource = DB.Connect.con.Группы.ToList();
         }
 
         private void studImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -41,6 +45,12 @@ namespace uchetProject.Windows
                 studImage.Source = new BitmapImage(new Uri(filename));
 
             }
+        }
+
+        private void CB_group_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var NDB = new uchotDBEntities();
+            var selection_gp = CB_group.SelectedItem as Группы;
         }
     }
 }

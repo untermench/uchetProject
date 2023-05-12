@@ -50,7 +50,7 @@ namespace uchetProject.Windows
                 if (MessageBox.Show($"Вы действительно хотите удалить запись?",
                         "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    DB.uchotDBEntities NDB = new DB.uchotDBEntities();
+                    uchotDBEntities NDB = new uchotDBEntities();
                     int removeID = (listDB.SelectedItem as Студент).ID;
                     var removeStud = NDB.Студент.FirstOrDefault(i => i.ID == removeID);
                     NDB.Студент.Remove(removeStud);

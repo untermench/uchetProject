@@ -17,10 +17,26 @@
                 <Label Content="Дата рождения"/>
                 <DatePicker/>
             </StackPanel>
+            
             <StackPanel Margin="186,0,20,0">
                 <Label Content="Группа"/>
-                <ComboBox/>
+                <ComboBox Name="CB_group" SelectedIndex="0" SelectionChanged="CB_group_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat="{} {0} {1}-{2}">
+                                        <Binding Path="Курс"/>
+                                        <Binding Path="Специальность.Сокращение"/>
+                                        <Binding Path="Префикс"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </StackPanel>
+            
             <StackPanel Margin="186,0,20,0">
                 <Label Content="Статус студента"/>
                 <ComboBox/>

@@ -27,7 +27,7 @@
                     <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Статус_студента.Статус}"/>
                     <GridViewColumn Header="Форма" DisplayMemberBinding="{Binding Форма_обучения.Форма}"/>
 
-                    <GridViewColumn Header="Дата зачисления" DisplayMemberBinding="{Binding Зачисление}"/>
+                    <GridViewColumn Header="Дата зачисления" DisplayMemberBinding="{Binding Зачисление, ConverterCulture=ru, StringFormat=D}"/>
                     <GridViewColumn Header="Номер телефона" DisplayMemberBinding="{Binding Номер}"/>
                     <GridViewColumn Header="Дата выбытия" DisplayMemberBinding="{Binding Выбытие}"/>
                     <GridViewColumn>
